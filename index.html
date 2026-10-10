@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Agrícola - Fertilización Maíz</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🌽 Simulador Bioeconómico de Fertilización en Maíz</h1>
+    <p>Universidad de Santa Marta - Ingeniería Agrícola</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>📥 Datos de Entrada</h2>
+      <div class="grid">
+        <label>Coeficiente a: <input type="number" id="a" value="-0.02" step="0.001"></label>
+        <label>Coeficiente b: <input type="number" id="b" value="8" step="0.1"></label>
+        <label>Coeficiente c: <input type="number" id="c" value="2500" step="1"></label>
+        <label>Precio venta (COP/kg): <input type="number" id="p" value="1200"></label>
+        <label>Costo fijo (COP/ha): <input type="number" id="Cf" value="450000"></label>
+        <label>Costo variable (COP/kg): <input type="number" id="Cv" value="1800"></label>
+        <label>Superficie (ha): <input type="number" id="superficie" value="1" step="0.1"></label>
+      </div>
+      <div class="botones">
+        <button onclick="calcularTodo()">🚀 Calcular</button>
+        <button onclick="cargarCaso(1)">Caso 1</button>
+        <button onclick="cargarCaso(2)">Caso 2</button>
+        <button onclick="cargarCaso(3)">Caso 3</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>📊 Resultados</h2>
+      <div id="salida" class="resultados"></div>
+    </section>
+
+    <section class="panel">
+      <h2>📈 Curva de Respuesta</h2>
+      <canvas id="parabola"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto Académico 2026 - Línea: Rendimiento, clima y rentabilidad del cultivo</p>
+  </footer>
+
+  <script src="js/modelo.js"></script>
+  <script src="js/validacion.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
